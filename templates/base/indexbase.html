@@ -1,0 +1,342 @@
+{% extends 'base/base.html' %}
+{% load staticfiles %}
+
+{% block css %}
+
+    <link href="{% static "css/demo/nifty-demo-icons.min.css" %}" rel="stylesheet">
+    <!--Pace - Page Load Progress Par [OPTIONAL]-->
+    <link href="{% static "plugins/pace/pace.min.css" %}" rel="stylesheet">
+    <script src="{% static "plugins/pace/pace.min.js" %}"></script>
+
+    <link href="{% static "css/demo/nifty-demo.min.css" %}" rel="stylesheet">
+
+    <!--Unite Gallery [ OPTIONAL ]-->
+    <link href="{% static "plugins/unitegallery/css/unitegallery.min.css" %}" rel="stylesheet">
+
+{% endblock %}
+
+{% block body %}
+    <div id="container" class="effect aside-float aside-bright mainnav-sm">
+
+        <!--NAVBAR-->
+        <!--===================================================-->
+        <header id="navbar">
+            <div id="navbar-container" class="boxed">
+
+                <!--Brand logo & name-->
+                <!--================================-->
+                <div class="navbar-header">
+                    <a href="{% url 'web:index' %}" class="navbar-brand">
+                        <img src="{% static 'img/logo.png' %}" alt="Nifty Logo" class="brand-icon">
+                        <div class="brand-title">
+                            <span class="brand-text">梦之家</span>
+                        </div>
+                    </a>
+                </div>
+                <!--================================-->
+                <!--End brand logo & name-->
+
+
+                <!--Navbar Dropdown-->
+                <!--================================-->
+                <div class="navbar-content clearfix">
+                    <ul class="nav navbar-top-links">
+
+                        <!--Navigation toogle button-->
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <li class="tgl-menu-btn">
+                            <a class="mainnav-toggle" href="#">
+                                <i class="pli-list-view icon-lg"></i>
+                            </a>
+                        </li>
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <!--End Navigation toogle button-->
+
+
+
+                        <!--Search-->
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <li>
+                            <div class="custom-search-form">
+                                <label class="btn btn-trans" for="search-input" data-toggle="collapse" data-target="#nav-searchbox">
+                                    <i class="pli-magnifi-glass"></i>
+                                </label>
+                                <form>
+                                    <div class="search-container collapse" id="nav-searchbox">
+                                        <input id="search-input" type="text" class="form-control" placeholder="搜索">
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <!--End Search-->
+
+                    </ul>
+                    <ul class="nav navbar-top-links">
+
+                        <!--Notification dropdown-->
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <li class="dropdown">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+                                <i class="pli-mail icon-lg icon-fw"></i>
+                                <span class="badge badge-header badge-danger"></span>
+                            </a>
+
+
+                        </li>
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <!--End notifications dropdown-->
+
+
+
+                        <!--User dropdown-->
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <li id="dropdown-user" class="dropdown">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle text-right">
+                                <span class="ic-user pull-right">
+                                    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                    <!--You can use an image instead of an icon.-->
+                                    <!--<img class="img-circle img-user media-object" src="img/profile-photos/1.png" alt="Profile Picture">-->
+                                    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                    <i class="pli-male"></i>
+                                </span>
+                                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                <!--You can also display a user name in the navbar.-->
+                                <!--<div class="username hidden-xs">Aaron Chavez</div>-->
+                                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                            </a>
+
+
+                            <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right panel-default">
+                                <ul class="head-list">
+                                    <li>
+                                        <a href="#"><i class="pli-male icon-lg icon-fw"></i>个人信息</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><span class="badge badge-danger pull-right">9</span><i class="pli-mail icon-lg icon-fw"></i> 未读消息</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="{% url 'web:logout' %}"><i class="pli-unlock icon-lg icon-fw"></i>退出</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <!--End user dropdown-->
+
+                        <li>
+                            <a href="#" class="aside-toggle">
+                                <i class="pli-dot-vertical"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!--================================-->
+                <!--End Navbar Dropdown-->
+
+            </div>
+        </header>
+        <!--===================================================-->
+        <!--END NAVBAR-->
+
+        <div class="boxed">
+
+            <!--CONTENT CONTAINER-->
+            <!--===================================================-->
+
+            {% block content %}
+            {% endblock %}
+            <!--===================================================-->
+            <!--END CONTENT CONTAINER-->
+
+
+
+            <!--MAIN NAVIGATION-->
+            <!--===================================================-->
+            <nav id="mainnav-container">
+                <div id="mainnav">
+
+
+                    <!--OPTIONAL : ADD YOUR LOGO TO THE NAVIGATION-->
+                    <!--It will only appear on small screen devices.-->
+                    <!--================================
+                    <div class="mainnav-brand">
+                        <a href="index.html" class="brand">
+                            <img src="img/logo.png" alt="Nifty Logo" class="brand-icon">
+                            <span class="brand-text">Nifty</span>
+                        </a>
+                        <a href="#" class="mainnav-toggle"><i class="pci-cross pci-circle icon-lg"></i></a>
+                    </div>
+                    -->
+
+
+
+                    <!--Menu-->
+                    <!--================================-->
+                    <div id="mainnav-menu-wrap">
+                        <div class="nano">
+                            <div class="nano-content">
+
+                                <!--Profile Widget-->
+                                <!--================================-->
+                                <div id="mainnav-profile" class="mainnav-profile">
+                                    <div class="profile-wrap text-center">
+                                        <div class="pad-btm">
+                                            <img class="img-circle img-md" src="{% static 'img/profile-photos/1.png' %}" alt="Profile Picture">
+                                        </div>
+                                        <a href="#profile-nav" class="box-block" data-toggle="collapse" aria-expanded="false">
+                                            <p class="mnp-name">{{ request.user.nikename }}</p>
+                                            <span class="mnp-desc">{{ request.user.email }}</span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <ul id="mainnav-menu" class="list-group">
+						            <!--Menu list item--class="active-sub"-->
+
+
+                                    {% for i in request.session.menu %}
+                                        <li >
+                                            <a href="#">
+{#                                                <i class="pli-mouse-3"></i>#}
+                                                <span class="menu-title">{{ i.title }}</span>
+                                                <i class="arrow"></i>
+                                            </a>
+                                            <ul class="collapse">
+                                                <!-- class="active-link"-->
+                                                {% for m in i.menu %}
+                                                    <li><a href="{% url 'web:transaction_changelist' %}{{ m.url|default_if_none:""  }}">{{ m.title }}</a></li>
+                                                {% endfor %}
+                                            </ul>
+                                        </li>
+                                    {% endfor %}
+
+                                </ul>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <!--================================-->
+                    <!--End menu-->
+
+                </div>
+            </nav>
+            <!--===================================================-->
+            <!--END MAIN NAVIGATION-->
+
+            <!--ASIDE-->
+            <!--===================================================-->
+            <aside id="aside-container">
+                <div id="aside">
+                    <div class="nano">
+                        <div class="nano-content">
+
+                            <!--Nav tabs-->
+                            <!--================================-->
+                            <ul class="nav nav-tabs nav-justified">
+                                <li class="active">
+                                    <a href="#demo-asd-tab-1" data-toggle="tab">
+                                        <i class="pli-speech-bubble-7"></i>我的好友
+                                    </a>
+                                </li>
+                            </ul>
+                            <!--================================-->
+                            <!--End nav tabs-->
+
+
+
+                            <!-- Tabs Content -->
+                            <!--================================-->
+                            <div class="tab-content">
+
+                                <!--First tab-->
+                                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                <div class="tab-pane fade in active" id="demo-asd-tab-1">
+                                    <p class="pad-all text-lg">First tab</p>
+                                    <div class="pad-hor">
+                                        </div>
+                                    <p class="pad-all text-lg">First tab</p>
+                                    <div class="pad-hor">
+                                        </div>
+                                </div>
+                                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                <!--End first tab-->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <!--===================================================-->
+            <!--END ASIDE-->
+
+        </div>
+
+
+
+        <!-- FOOTER -->
+        <!--===================================================-->
+        <footer id="footer">
+
+            <!-- Visible when footer positions are fixed -->
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <div class="show-fixed pad-rgt pull-right">
+                You have <a href="#" class="text-main"><span class="badge badge-danger">3</span> pending action.</a>
+            </div>
+
+
+
+            <!-- Visible when footer positions are static -->
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <div class="hide-fixed pull-right pad-rgt">
+                14GB of <strong>512GB</strong> Free.
+            </div>
+
+
+
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!-- Remove the class "show-fixed" and "hide-fixed" to make the content always appears. -->
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+            <p class="pad-lft">&#0169; 2017 Your Company</p>
+
+
+
+        </footer>
+        <!--===================================================-->
+        <!-- END FOOTER -->
+
+
+        <!-- SCROLL PAGE BUTTON -->
+        <!--===================================================-->
+        <button class="scroll-top btn">
+            <i class="pci-chevron chevron-up"></i>
+        </button>
+        <!--===================================================-->
+
+
+
+    </div>
+{% endblock %}
+
+
+{% block js %}
+    <!--Unite Gallery [ OPTIONAL ]-->
+    <script src="{% static "plugins/unitegallery/js/unitegallery.min.js" %}"></script>
+	<script src="{% static "plugins/unitegallery/themes/slider/ug-theme-slider.js" %}"></script>
+
+    <!--Custom script [ DEMONSTRATION ]-->
+    <!--===================================================-->
+    <script>
+        $(document).on('nifty.ready', function () {
+			$("#demo-gallery-4").unitegallery({
+			    slider_progress_indicator_type: "bar"
+			});
+        });
+    </script>
+
+
+{% endblock %}
+

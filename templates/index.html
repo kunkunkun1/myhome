@@ -1,0 +1,264 @@
+{% extends 'base/indexbase.html' %}
+{% load staticfiles %}
+
+{% block title %}
+    首页
+{% endblock %}
+
+
+
+{% block content %}
+    <!--CONTENT CONTAINER-->
+    <!--===================================================-->
+    <div id="content-container">
+        <div id="page-head">
+            <!--Breadcrumb-->
+            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+            <ol class="breadcrumb">
+            <li><i class="demo-pli-home"></i></li>
+            </ol>
+            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+            <!--End breadcrumb-->
+        </div>
+
+
+        <!--Page content-->
+        <!--===================================================-->
+        <div id="page-content">
+
+            <div class="row" >
+                <div class="col-lg-8">
+                    <div class="panel">
+                        <div class="pad-all">
+                            <div id="demo-gallery-4" style="display:none;">
+                                {{ slider }}
+                                {% for i in slider %}
+                                    <a href="#">
+                                        <img
+                                         src="{{ MEDIA_URL }}/{{ i.transcation__img }}"
+                                         style="display:none">
+                                        1111
+                                    </a>
+                                {% endfor %}
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="panel" >
+                        {% for i in right_nav %}
+                            <div class="panel media middle">
+                                <div class="media-left bg-mint pad-all">
+                                    <i class="{{ i.icon }} icon-3x"></i>
+                                </div>
+                                <div class="media-body pad-all">
+                                    <p class="text-2x mar-no text-semibold text-center">{{ i.title }}</p>
+                                </div>
+                                <div class="media-right bg-mint pad-all">
+                                    <i class="{{ i.icon }} icon-3x"></i>
+                                </div>
+                            </div>
+                        {% endfor %}
+
+
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="panel">
+                <!--Panel heading-->
+                <div class="panel-heading btn-success active">
+                    <div class="panel-control">
+                        <button class="demo-panel-ref-btn btn btn-default" data-toggle="panel-overlay" data-target="#demo-panel-collapse-default"><i class="demo-psi-repeat-2"></i></button>
+                    </div>
+                    <h3 class="panel-title">最新账号</h3>
+                </div>
+
+                <!--Panel body-->
+                <div id="demo-panel-collapse-default" class="panel-body">
+                    <div class="row">
+                      <div class="col-sm-6 col-md-3">
+                        <div class="thumbnail">
+                          <img src="{% static 'img/gallery/big/tile1.jpg'%}">
+                          <div class="caption" style="text-align: center">
+                            <h3 >五开账号标题</h3>
+                            <p>简述</p>
+                          </div>
+                        </div>
+                      </div>
+                        <div class="col-sm-6 col-md-3">
+                        <div class="thumbnail">
+                          <img src="{% static 'img/gallery/big/tile1.jpg'%}">
+                          <div class="caption" style="text-align: center">
+                            <h3 >五开账号标题</h3>
+                            <p>简述</p>
+                          </div>
+                        </div>
+                      </div>
+                        <div class="col-sm-6 col-md-3">
+                        <div class="thumbnail">
+                          <img src="{% static 'img/gallery/big/tile1.jpg'%}">
+                          <div class="caption" style="text-align: center">
+                            <h3 >五开账号标题</h3>
+                            <p>简述</p>
+                          </div>
+                        </div>
+                      </div>
+                        <div class="col-sm-6 col-md-3">
+                        <div class="thumbnail">
+                          <img src="{% static 'img/gallery/big/tile1.jpg'%}">
+                          <div class="caption" style="text-align: center">
+                            <h3 >五开账号标题</h3>
+                            <p>简述</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-sm-6 col-md-3">
+                        <div class="thumbnail">
+                          <img src="{% static 'img/gallery/big/tile1.jpg'%}">
+                          <div class="caption" style="text-align: center">
+                            <h3 >五开账号标题</h3>
+                            <p>简述</p>
+                          </div>
+                        </div>
+                      </div>
+                        <div class="col-sm-6 col-md-3">
+                        <div class="thumbnail">
+                          <img src="{% static 'img/gallery/big/tile1.jpg'%}">
+                          <div class="caption" style="text-align: center">
+                            <h3 >五开账号标题</h3>
+                            <p>简述</p>
+                          </div>
+                        </div>
+                      </div>
+                        <div class="col-sm-6 col-md-3">
+                        <div class="thumbnail">
+                          <img src="{% static 'img/gallery/big/tile1.jpg'%}">
+                          <div class="caption" style="text-align: center">
+                            <h3 >五开账号标题</h3>
+                            <p>简述</p>
+                          </div>
+                        </div>
+                      </div>
+                        <div class="col-sm-6 col-md-3">
+                        <div class="thumbnail">
+                          <img src="{% static 'img/gallery/big/tile1.jpg'%}">
+                          <div class="caption" style="text-align: center">
+                            <h3 >五开账号标题</h3>
+                            <p>简述</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="panel">
+                <!--Panel heading-->
+                <div class="panel-heading btn-danger active">
+                    <div class="panel-control">
+                        <button class="demo-panel-ref-btn btn btn-default" data-toggle="panel-overlay" data-target="#demo-panel-collapse-default"><i class="demo-psi-repeat-2"></i></button>
+                    </div>
+                    <h3 class="panel-title">最热账号</h3>
+                </div>
+
+                <!--Panel body-->
+                <div id="demo-panel-collapse-default" class="panel-body">
+                    <div class="row">
+                      <div class="col-sm-6 col-md-3">
+                        <div class="thumbnail">
+                          <img src="{% static 'img/gallery/big/tile1.jpg'%}">
+                          <div class="caption" style="text-align: center">
+                            <h3 >五开账号标题</h3>
+                            <p>简述</p>
+                          </div>
+                        </div>
+                      </div>
+                        <div class="col-sm-6 col-md-3">
+                        <div class="thumbnail">
+                          <img src="{% static 'img/gallery/big/tile1.jpg'%}">
+                          <div class="caption" style="text-align: center">
+                            <h3 >五开账号标题</h3>
+                            <p>简述</p>
+                          </div>
+                        </div>
+                      </div>
+                        <div class="col-sm-6 col-md-3">
+                        <div class="thumbnail">
+                          <img src="{% static 'img/gallery/big/tile1.jpg'%}">
+                          <div class="caption" style="text-align: center">
+                            <h3 >五开账号标题</h3>
+                            <p>简述</p>
+                          </div>
+                        </div>
+                      </div>
+                        <div class="col-sm-6 col-md-3">
+                        <div class="thumbnail">
+                          <img src="{% static 'img/gallery/big/tile1.jpg'%}">
+                          <div class="caption" style="text-align: center">
+                            <h3 >五开账号标题</h3>
+                            <p>简述</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-sm-6 col-md-3">
+                        <div class="thumbnail">
+                          <img src="{% static 'img/gallery/big/tile1.jpg'%}">
+                          <div class="caption" style="text-align: center">
+                            <h3 >五开账号标题</h3>
+                            <p>简述</p>
+                          </div>
+                        </div>
+                      </div>
+                        <div class="col-sm-6 col-md-3">
+                        <div class="thumbnail">
+                          <img src="{% static 'img/gallery/big/tile1.jpg'%}">
+                          <div class="caption" style="text-align: center">
+                            <h3 >五开账号标题</h3>
+                            <p>简述</p>
+                          </div>
+                        </div>
+                      </div>
+                        <div class="col-sm-6 col-md-3">
+                        <div class="thumbnail">
+                          <img src="{% static 'img/gallery/big/tile1.jpg'%}">
+                          <div class="caption" style="text-align: center">
+                            <h3 >五开账号标题</h3>
+                            <p>简述</p>
+                          </div>
+                        </div>
+                      </div>
+                        <div class="col-sm-6 col-md-3">
+                        <div class="thumbnail">
+                          <img src="{% static 'img/gallery/big/tile1.jpg'%}">
+                          <div class="caption" style="text-align: center">
+                            <h3 >五开账号标题</h3>
+                            <p>简述</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!--===================================================-->
+        <!--End page content-->
+
+    </div>
+    <!--===================================================-->
+    <!--END CONTENT CONTAINER-->
+{% endblock %}
+

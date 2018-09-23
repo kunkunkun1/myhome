@@ -1,0 +1,98 @@
+{% extends 'base/indexbase.html' %}
+{% load staticfiles %}
+
+{% block title %}
+    我的帖子
+{% endblock %}
+
+
+
+{% block content %}
+    <div id="content-container">
+        <div id="page-head">
+            <ol class="breadcrumb">
+                <li><a href="{% url 'web:index' %}"><i class="demo-pli-home"></i></a></li>
+                <li><i class="pli-open-book"></i></li>
+            </ol>
+        </div>
+        <div>
+            <div class="col-sm-12">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">我的帖子</h3>
+                    </div>
+                    <!--Bordered Table-->
+                    <!--===================================================-->
+                    <div class="panel-body">
+
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <div class="newtoolbar">
+
+                                    <a href="{% url 'web:transaction_add' %}" class="btn-link">
+                                        <div id="demo-custom-toolbar2" class="table-toolbar-left">
+                                            <button id="demo-dt-addrow-btn" class="btn btn-primary">
+                                                <i class="demo-pli-plus"></i>新增
+                                            </button>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">#</th>
+                                        <th>队伍</th>
+                                        <th>操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for foo in result_list %}
+                                        <tr>
+                                            <td class="text-center">{{ forloop.counter }}</td>
+                                            <td>
+                                                <a href="{% url 'web:transaction_detail' foo.id %}" class="btn-link">{{ foo.team }}</a>
+                                            </td>
+                                            <td>
+                                                <a href="{% url 'web:transaction_detail' foo.id %}" class="btn-link">
+                                                    <span class="label label-info">查看</span>
+                                                </a>
+                                                <a href="{% url 'web:transaction_change' foo.id %}" class="btn-link">
+                                                    <span class="label label-success">修改</span>
+                                                </a>
+                                                <a href="{% url 'web:transaction_delete' foo.id %}" class="btn-link">
+                                                    <span class="label label-warning">删除</span>
+                                                </a>
+
+
+
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!--===================================================-->
+                    <!--End Bordered Table-->
+
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <ul class="pagination mar-no">
+                <li class="disabled"><a class="demo-pli-arrow-left" href="#"></a></li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a class="demo-pli-arrow-right" href="#"></a></li>
+            </ul>
+        </div>
+    </div>
+
+{% endblock %}
+

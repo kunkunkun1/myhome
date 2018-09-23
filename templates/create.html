@@ -1,0 +1,64 @@
+{% extends 'base/indexbase.html' %}
+{% load staticfiles %}
+
+{% block title %}
+    增加
+{% endblock %}
+
+
+
+{% block content %}
+
+    <div id="content-container">
+        <div id="page-head">
+            <ol class="breadcrumb">
+                <li><a href="{% url 'web:index' %}"><i class="demo-pli-home"></i></a></li>
+                <li><a href="{% url 'web:transaction_changelist' %}"><i class="pli-open-book"></i></a></li>
+                <li><i class="pli-diploma-2"></i></li>
+            </ol>
+        </div>
+
+        <div>
+            <div class="col-sm-12">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">新增</h3>
+                    </div>
+                    <!--Bordered Table-->
+                    <!--===================================================-->
+                    <form class="form-horizontal" method="post">
+                        {% csrf_token %}
+                        <div class="panel-body">
+                            {% for i in form %}
+                                {{ i.errors.0 }}
+                                 <div class="form-group">
+                                    <label class="col-sm-3 control-label">{{ i.label_tag }}</label>
+                                    <div class="col-sm-9">
+                                        {{ i }}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <div class="panel-footer text-right">
+                            <button class="btn btn-success" type="submit">提交</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <ul class="pagination mar-no">
+                <li class="disabled"><a class="demo-pli-arrow-left" href="#"></a></li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a class="demo-pli-arrow-right" href="#"></a></li>
+            </ul>
+        </div>
+    </div>
+
+{% endblock %}
+

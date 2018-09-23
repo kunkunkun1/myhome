@@ -1,0 +1,42 @@
+{% extends 'base/indexbase.html' %}
+{% load staticfiles %}
+
+{% block title %}
+    帖子详情
+{% endblock %}
+
+
+
+{% block content %}
+    <div id="content-container">
+        <div id="page-head">
+            <ol class="breadcrumb">
+                <li><a href="{% url 'web:index' %}"><i class="demo-pli-home"></i></a></li>
+                <li><a href="{% url 'web:transaction_changelist' %}"><i class="pli-open-book"></i></a></li>
+                <li><i class="pli-diploma-2"></i></li>
+            </ol>
+        </div>
+
+
+        <div class="text-center">
+            <ul class="pagination mar-no">
+                <li class="disabled"><a class="demo-pli-arrow-left" href="#"></a></li>
+                <li class="active"><a href="#">1</a></li>
+                <li class="active"><a href="#">
+                    {{ object }}</a></li>
+
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a class="demo-pli-arrow-right" href="#"></a></li>
+            </ul>
+
+        </div>
+    111111111
+        {{ result_list.team }}
+
+    </div>
+
+{% endblock %}
+
