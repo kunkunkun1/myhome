@@ -1,5 +1,5 @@
 {% extends 'base/indexbase.html' %}
-{% load staticfiles %}
+{% load staticfiles admin_list filter i18n admin_urls static %}
 
 {% block title %}
     我的帖子
@@ -38,38 +38,16 @@
                                     </a>
                                 </div>
 
-                                <thead>
-                                    <tr>
-                                        <th class="text-center">#</th>
-                                        <th>队伍</th>
-                                        <th>操作</th>
-                                    </tr>
-                                </thead>
+
                                 <tbody>
-                                    {% for foo in result_list %}
-                                        <tr>
-                                            <td class="text-center">{{ forloop.counter }}</td>
-                                            <td>
-                                                <a href="{% url 'web:transaction_detail' foo.id %}" class="btn-link">{{ foo.team }}</a>
-                                            </td>
-                                            <td>
-                                                <a href="{% url 'web:transaction_detail' foo.id %}" class="btn-link">
-                                                    <span class="label label-info">查看</span>
-                                                </a>
-                                                <a href="{% url 'web:transaction_change' foo.id %}" class="btn-link">
-                                                    <span class="label label-success">修改</span>
-                                                </a>
-                                                <a href="{% url 'web:transaction_delete' foo.id %}" class="btn-link">
-                                                    <span class="label label-warning">删除</span>
-                                                </a>
-
-
-
-                                            </td>
-                                        </tr>
-                                    {% endfor %}
-
-
+                                      <form id="changelist-form" method="post"{% if cl.formset.is_multipart %} enctype="multipart/form-data"{% endif %} novalidate>{% csrf_token %}
+                                          {% if cl.formset %}
+                                            <div>{{ cl.formset.management_form }}</div>
+                                          {% endif %}
+                                        {% if action_form and actions_on_top and cl.show_admin_actions %}{% my_admin_actions %}{% endif %}
+                                        {% my_result_list cl %}
+                                        {% if action_form and actions_on_bottom and cl.show_admin_actions %}{% my_admin_actions %}{% endif %}
+                                      </form>
                                 </tbody>
                             </table>
                         </div>
@@ -96,3 +74,6 @@
 
 {% endblock %}
 
+{% block js %}
+      {{ media.js }}
+{% endblock %}

@@ -12,18 +12,14 @@
     <!--===================================================-->
     <div id="content-container">
         <div id="page-head">
-            <!--Breadcrumb-->
-            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
             <ol class="breadcrumb">
             <li><i class="demo-pli-home"></i></li>
             </ol>
-            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-            <!--End breadcrumb-->
+
         </div>
 
 
-        <!--Page content-->
-        <!--===================================================-->
         <div id="page-content">
 
             <div class="row" >
@@ -34,10 +30,9 @@
                                 {{ slider }}
                                 {% for i in slider %}
                                     <a href="#">
-                                        <img
+                                        <img class="img-responsive"
                                          src="{{ MEDIA_URL }}/{{ i.transcation__img }}"
                                          style="display:none">
-                                        1111
                                     </a>
                                 {% endfor %}
 

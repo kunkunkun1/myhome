@@ -9,6 +9,8 @@ from dbmodels import models
 class Tran(ModelAdmin):
     list_display = ('__str__','team','img','stat','user')
     list_editable = ('team','img','stat','user',)
+    ordering = ['-team',]
+from django.db.models.options import Options
 
 
 admin.site.register(models.ShowImg)

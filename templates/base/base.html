@@ -8,6 +8,9 @@
 
     <title>{% block title %}{% endblock %}|梦之家</title>
 
+
+    <link rel="stylesheet" type="text/css" href="{% block stylesheet %}{% static "admin/css/base.css" %}{% endblock %}" />
+
     <!--STYLESHEET-->
     <!--=================================================-->
 
@@ -59,6 +62,7 @@
     
     <!--Nifty Admin [ RECOMMENDED ]-->
     <script src="{% static "js/nifty.min.js" %}"></script>
+    <script type="text/javascript" src="{% url 'admin:jsi18n' %}"></script>
     {% block js %}
     {% endblock %}
 

@@ -34,7 +34,7 @@ class Transaction(models.Model):
     objects = TransactionManager()
     stat_choices = ((0, '售出'), (1, '上架'),)
 
-    team = models.CharField(max_length=64)
+    team = models.CharField('队伍',max_length=64)
     img = models.ImageField(upload_to='indeximg',null=True,blank=True)
     create_time = models.DateTimeField(auto_now_add=True)
     stat = models.IntegerField(choices=stat_choices,default=1)

@@ -24,6 +24,7 @@ if __name__ == '__main__':
     # engine = Engine(r'https://xyq.cbg.163.com/equip?s=132&eid=201809032000113-132-DUW7DXJNIWED&view_loc=equip_list')
     # engine = Engine(r'https://xyq.cbg.163.com/equip?s=132&eid=201808302200113-132-YX9SVYZXJIRY&view_loc=equip_list')
     # engine = Engine(r'https://xyq.cbg.163.com/equip?s=482&eid=201809132100113-482-7SCLOBWBBM3W&view_loc=equip_list')
-    engine = Engine(r'https://xyq.cbg.163.com/equip?s=482&eid=201808062200113-482-Y6CGKXZDUSER&view_loc=equip_list')
+    # engine = Engine(r'https://xyq.cbg.163.com/equip?s=482&eid=201808062200113-482-Y6CGKXZDUSER&view_loc=equip_list')
+    engine = Engine(r'https://xyq.cbg.163.com/equip?s=416&eid=201809211700113-416-T22Y7XWOX35C&view_loc=equip_list')
     print(engine.get_parse_result)
     print(engine.get_base_data)
